@@ -7,9 +7,8 @@
 반드시 본인이 사용하는 기술 스택에 맞도록 수정해서 사용해야 합니다.
 ```
 
-1. 기술 스택 (Tech Stack)
+## 1. 기술 스택 (Tech Stack)
 
-<예시 내용>
 Backend: Python (FastAPI / Django / Flask) 
 
 Frontend:
@@ -18,8 +17,8 @@ Database: MySQL 8.4 LTS
 
 Infrastructure: Docker / Docker Compose
 
-2. 프로젝트 디렉토리 구조
-
+## 2. 프로젝트 디렉토리 구조
+```text
 project_ex/
 ├── .gitignore              # Git 추적 제외 설정
 ├── docker-compose.yml      # 백엔드 & MySQL DB 실행 컨테이너 Orchestration
@@ -36,9 +35,8 @@ project_ex/
 └── frontend/               # 프론트엔드 작업 디렉토리 (Flutter)
     ├── **.env**             # 프론트엔드 로컬 환경변수 (Git 추적 안 됨)
     └── **.env.example**      # 프론트엔드 환경변수 템플릿
-
-
-3. 시작하기 (Quick Start)
+```
+## 3. 시작하기 (Quick Start)
 
 ① 레포지토리 클론 (Clone)
 
@@ -47,26 +45,36 @@ cd Project_example
 
 ```.env 파일은 /backend 와 /frontend 에 직접 추가```
 
-4. 실행 방법
+## 4.실행 방법
 
 백엔드 & 데이터베이스 (Docker Compose)
 
 백엔드 서버와 MySQL 8.4 데이터베이스는 Docker Compose를 이용해 통합 실행합니다.
 
-# 백엔드 및 DB 컨테이너 빌드 및 백그라운드 실행
+#### - 백엔드 및 DB 컨테이너 빌드 및 백그라운드 실행
+```bash
 docker compose up -d --build
+```
 
-# 실행 상태 확인
+#### - 실행 상태 확인
+```bash
 docker compose ps
+```
 
-# 백엔드 및 DB 로그 확인
+#### - 백엔드 및 DB 로그 확인
+```bash
 docker compose logs -f
+```
 
-# 컨테이너 종료 (데이터 볼륨 유지)
+#### - 컨테이너 종료 (데이터 볼륨 유지)
+```bash
 docker compose down
+```
 
 
-5. 협업 및 Git 워크플로우
+## 5. 협업 및 Git 워크플로우
+
+> 해당 파일들은 예시로 작성된 기술들 입니다. 반드시! 본인이 사용한 기술스택으로 수정하여 사용하십시오.
 
 .env 파일 커밋 금지: 실제 비밀번호나 API Key가 포함된 .env 파일은 절대 Git 저장소에 커밋하지 않습니다. 신규 변수가 추가될 경우 .env.example을 업데이트합니다.
 

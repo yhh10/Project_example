@@ -1,0 +1,36 @@
+version: '0'
+
+services:
+  db:
+    image: mysql:8.4
+    container_name: project_db
+    networks:
+      - networkName
+    volumes:
+      - 
+    restart: always
+    command: mysqld --character-set-server=utf8mb4 --collation-server=utf8mb4_unicode_ci
+    environment:
+      - MYSQL_ROOT_PASSWORD: myrootpass
+      - MYSQL_DATABASE:
+      - MYSQL_USER: mydb
+      - MYSQL_PASSWORD: mydbpass
+    ports:
+      - "3306:3306"
+  backend:
+    build: ./backend
+    container_name: project_backend
+    restart: always
+    depends_on:
+      - db
+    ports:
+      - "8000:8000"
+    
+    networks:
+      - project_network
+
+networks:
+  - project_network
+
+volumes:
+  - mysql_data

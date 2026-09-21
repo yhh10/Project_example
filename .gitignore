@@ -1,0 +1,11 @@
+.env
+
+# 백엔드 가앙환경 및 파이썬 캐시
+backend/venv/
+backend/.venv/
+backend/__pycache__/
+
+# 프론트엔드 (Flutter) 빌드 파일
+frontend/.dart_tool/
+frontend/.idea/
+frontend/build/
